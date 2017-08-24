@@ -10,6 +10,7 @@ import com.thinkgem.jeesite.common.entity.User;
 import com.thinkgem.jeesite.common.supcan.annotation.treelist.SupTreeList;
 import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupCol;
 import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.common.utils.UserUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import javax.xml.bind.annotation.XmlTransient;
@@ -75,7 +76,7 @@ public abstract class BaseEntity<T> implements Serializable {
     @XmlTransient
     public User getCurrentUser() {
         if (currentUser == null) {
-            //currentUser = UserUtils.getUser();
+            currentUser = UserUtils.getUser();
         }
         return currentUser;
     }
