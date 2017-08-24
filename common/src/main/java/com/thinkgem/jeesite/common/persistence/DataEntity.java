@@ -3,16 +3,15 @@
  */
 package com.thinkgem.jeesite.common.persistence;
 
-import java.util.Date;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.thinkgem.jeesite.common.entity.User;
+import com.thinkgem.jeesite.common.utils.IdGen;
+import com.thinkgem.jeesite.common.utils.UserUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.thinkgem.jeesite.common.utils.IdGen;
-import com.thinkgem.jeesite.modules.sys.entity.User;
-import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
+import java.util.Date;
 
 /**
  * 数据Entity类
@@ -48,7 +47,7 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 		if (!this.isNewRecord){
 			setId(IdGen.uuid());
 		}
-		User user = UserUtils.getUser();
+		User user = new User();// UserUtils.getUser();
 		if (StringUtils.isNotBlank(user.getId())){
 			this.updateBy = user;
 			this.createBy = user;
@@ -62,7 +61,7 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 	 */
 	@Override
 	public void preUpdate(){
-		User user = UserUtils.getUser();
+		User user =  UserUtils.getUser();
 		if (StringUtils.isNotBlank(user.getId())){
 			this.updateBy = user;
 		}

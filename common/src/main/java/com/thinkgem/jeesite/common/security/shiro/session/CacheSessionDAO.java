@@ -3,12 +3,11 @@
  */
 package com.thinkgem.jeesite.common.security.shiro.session;
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Set;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.google.common.collect.Sets;
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.DateUtils;
+import com.thinkgem.jeesite.common.utils.StringUtils;
+import com.thinkgem.jeesite.common.web.Servlets;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
 import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
@@ -17,12 +16,10 @@ import org.apache.shiro.subject.support.DefaultSubjectContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.Sets;
-
-import com.thinkgem.jeesite.common.config.Global;
-import com.thinkgem.jeesite.common.utils.DateUtils;
-import com.thinkgem.jeesite.common.utils.StringUtils;
-import com.thinkgem.jeesite.common.web.Servlets;
+import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Set;
 
 /**
  * 系统安全认证实现类

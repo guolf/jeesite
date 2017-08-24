@@ -3,13 +3,13 @@
  */
 package com.thinkgem.jeesite.common.supcan.common;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.supcan.common.fonts.Font;
 import com.thinkgem.jeesite.common.supcan.common.properties.Properties;
 import com.thinkgem.jeesite.common.utils.IdGen;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+import java.util.List;
 
 /**
  * 硕正Common

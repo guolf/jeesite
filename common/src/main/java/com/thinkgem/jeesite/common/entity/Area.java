@@ -3,9 +3,8 @@
  */
 package com.thinkgem.jeesite.common.entity;
 
-import org.hibernate.validator.constraints.Length;
-
 import com.thinkgem.jeesite.common.persistence.TreeEntity;
+import org.hibernate.validator.constraints.Length;
 
 /**
  * 区域Entity

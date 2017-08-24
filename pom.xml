@@ -6,10 +6,18 @@
 	<groupId>com.thinkgem.jeesite</groupId>
 	<artifactId>jeesite</artifactId>
 	<version>1.2.7</version>
-	<packaging>war</packaging>
+	<modules>
+		<module>common</module>
+		<module>sys-web</module>
+		<module>sys-service</module>
+		<module>sys-dao</module>
+		<module>cms-web</module>
+		<module>web-resource</module>
+	</modules>
+	<packaging>pom</packaging>
 	
 	<name>JeeSite</name>
-	<url>http://thinkgem.github.com/jeesite</url>
+	<url>http://github.com/guolf/jeesite</url>
 	<inceptionYear>2012-2016</inceptionYear>
 	
 	<!-- 项目属性 -->
@@ -192,19 +200,19 @@
 			<version>${mysql.driver.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc14</artifactId>
-			<version>${oracle.driver.version}</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ojdbc14-10.2.0.4.0.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>net.sourceforge.jtds</groupId>
-			<artifactId>jtds</artifactId>
-			<version>${mssql.driver.version}</version>
-			<scope>runtime</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.oracle</groupId>-->
+			<!--<artifactId>ojdbc14</artifactId>-->
+			<!--<version>${oracle.driver.version}</version>-->
+			<!--<scope>system</scope>-->
+			<!--<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ojdbc14-10.2.0.4.0.jar</systemPath>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>net.sourceforge.jtds</groupId>-->
+			<!--<artifactId>jtds</artifactId>-->
+			<!--<version>${mssql.driver.version}</version>-->
+			<!--<scope>runtime</scope>-->
+		<!--</dependency>-->
 		<!-- PERSISTENCE end -->
 		
 		<!-- WEB begin -->
@@ -528,54 +536,7 @@
 			<artifactId>javase</artifactId>
 			<version>2.2</version>
 		</dependency>
-		
-		<!-- 中文分词 -->
-		<dependency>
-			<groupId>org.wltea</groupId>
-			<artifactId>analyzer</artifactId>
-			<version>2012_u6</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/analyzer-2012_u6.jar</systemPath>
-		</dependency>
-		<!-- GENERAL UTILS end -->
-		
-		<!-- CKFinder begin -->
-		<dependency>
-			<groupId>net.coobird</groupId>
-			<artifactId>thumbnailator</artifactId>
-			<version>0.4.2</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/thumbnailator-0.4.2.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>com.ckfinder</groupId>
-			<artifactId>apache-ant-zip</artifactId>
-			<version>2.3</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/apache-ant-zip-2.3.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>com.ckfinder</groupId>
-			<artifactId>ckfinder</artifactId>
-			<version>2.3</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ckfinder-2.3.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>com.ckfinder</groupId>
-			<artifactId>ckfinderplugin-fileeditor</artifactId>
-			<version>2.3</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ckfinderplugin-fileeditor-2.3.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>com.ckfinder</groupId>
-			<artifactId>ckfinderplugin-imageresize</artifactId>
-			<version>2.3</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ckfinderplugin-imageresize-2.3.jar</systemPath>
-		</dependency>
-		<!-- CKFinder end -->
+
 		
 		<!-- TEST begin -->
 		<dependency>
@@ -589,41 +550,6 @@
 			<version>${spring.version}</version>
 		</dependency>
 		<!-- TEST end -->
-		
-		<!-- User Agent -->
-		<dependency>
-			<groupId>bitwalker</groupId>
-			<artifactId>UserAgentUtils</artifactId>
-			<version>1.13</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/UserAgentUtils-1.13.jar</systemPath>
-		</dependency>
-		
-		<!-- 自定义jar依赖包
-		<dependency>
-			<groupId>com.thinkgem.jeesite</groupId>
-			<artifactId>test-core</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/test-core-1.0.jar</systemPath>
-		</dependency> -->
-		
-		<!-- 使用 Jetty JSP引擎 
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-jsp</artifactId>
-			<version>${jetty.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.eclipse.jetty.orbit</groupId>
-					<artifactId>javax.servlet</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.eclipse.jetty.orbit</groupId>
-					<artifactId>org.apache.taglibs.standard.glassfish</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency> -->
 		
 	</dependencies>
 
@@ -682,32 +608,6 @@
 					</execution>
 				</executions>
 			</plugin>-->
-			
-			<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<encoding>${project.build.sourceEncoding}</encoding>
-				</configuration>
-				<!-- <executions>
-					<execution>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<classesDirectory>${project.outputDirectory}</classesDirectory>
-							<finalName>jeesite</finalName>
-							<outputDirectory>${project.build.directory}/${project.artifactId}/WEB-INF/lib</outputDirectory>
-							<includes>
-					        	<include>com/thinkgem/jeesite/**</include>
-					       	</includes>
-						</configuration>
-					</execution>
-				</executions> -->
-			</plugin>
 			
 			<!-- 混淆代码
 			<plugin>
@@ -834,29 +734,6 @@
 				</configuration>
 			</plugin>
 			
-			<!-- jetty插件 -->
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jetty.version}</version>
-				<configuration>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>${webserver.port}</port>
-						</connector>
-					</connectors>
-					<webAppConfig>
-						<contextPath>/${project.artifactId}</contextPath>
-					</webAppConfig>
-					<systemProperties>  
-						<systemProperty>
-							<name>org.mortbay.util.URI.charset</name>
-							<value>${project.build.sourceEncoding}</value>
-						</systemProperty>
-					</systemProperties>
-				</configuration>
-			</plugin>
-			
 			<!-- resource插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -893,86 +770,7 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	<profiles>
-		<!-- 初始化数据库 -->			
-		<profile>
-			<id>init-db</id>
-			<dependencies>
-				<dependency>
-					<groupId>org.dbunit</groupId>
-					<artifactId>dbunit</artifactId>
-					<version>2.4.8</version>
-				</dependency>
-			  	<dependency>
-				    <groupId>org.apache.poi</groupId>
-				    <artifactId>poi</artifactId>
-				    <version>3.2-FINAL</version>
-				</dependency>
-			</dependencies>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<version>1.7</version>
-						<configuration>
-							<target>
-								
-								<!-- mysql -->
-								<property name="dbunit.datatype" value="org.dbunit.ext.mysql.MySqlDataTypeFactory" />
-								
-								<!-- mssql
-								<property name="dbunit.datatype" value="org.dbunit.ext.mssql.MsSqlDataTypeFactory" /> -->
-								
-								<!-- oracle
-								<property name="dbunit.datatype" value="org.dbunit.ext.oracle.Oracle10DataTypeFactory" /> -->
-								
-								<property file="src/main/resources/jeesite.properties" />
-								<sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${jdbc.username}" password="${jdbc.password}" 
-									onerror="continue" encoding="${project.build.sourceEncoding}">
-									<classpath refid="maven.test.classpath" />
-									<transaction src="db/sys/jeesite_${jdbc.type}.sql"/>
-									<transaction src="db/cms/jeesite_${jdbc.type}.sql"/>
-									<transaction src="db/oa/jeesite_${jdbc.type}.sql"/>
-									<transaction src="db/gen/jeesite_${jdbc.type}.sql"/>
-									<transaction src="db/gen/example_${jdbc.type}.sql"/>
-									<transaction src="db/test/jeesite_${jdbc.type}.sql"/>
-									<transaction src="db/act/drop/activiti.${jdbc.type}.drop.engine.sql"/>
-									<transaction src="db/act/drop/activiti.${jdbc.type}.drop.history.sql"/>
-									<transaction src="db/act/drop/activiti.${jdbc.type}.drop.identity.sql"/>
-									<transaction src="db/act/create/activiti.${jdbc.type}.create.engine.sql"/>
-									<transaction src="db/act/create/activiti.${jdbc.type}.create.history.sql"/>
-									<transaction src="db/act/create/activiti.${jdbc.type}.create.identity.sql"/>
-								</sql>
-								
-								<taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="maven.test.classpath" />
-								
-								<!-- mysql、mssql -->
-								<dbunit driver="${jdbc.driver}" url="${jdbc.url}" userid="${jdbc.username}"
-									 password="${jdbc.password}">
-								
-								<!-- oracle
-								<dbunit driver="${jdbc.driver}" url="${jdbc.url}" userid="${jdbc.username}"
-									password="${jdbc.password}" schema="${jdbc.username}" > -->
-									
-									<dbconfig>
-										<property name="datatypeFactory" value="${dbunit.datatype}" />
-									</dbconfig>
-									<classpath refid="maven.test.classpath" />
-									<operation type="INSERT" src="db/sys/jeesite_data.xls" format="xls" transaction="true"/>
-									<operation type="INSERT" src="db/cms/jeesite_data.xls" format="xls" transaction="true"/>
-									
-								</dbunit>
-								
-							</target>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-	
+
 	<!-- 开发者信息 -->
 	<developers>  
 		<developer>
@@ -980,6 +778,12 @@
 			<name>WangZhen</name>
 			<email>thinkgem at 163.com</email>
 			<roles><role>Project lead</role></roles>
+			<timezone>+8</timezone>
+		</developer>
+
+		<developer>
+			<id>guolf</id>
+			<email>guolingfa@gmail.com</email>
 			<timezone>+8</timezone>
 		</developer>
 	</developers>

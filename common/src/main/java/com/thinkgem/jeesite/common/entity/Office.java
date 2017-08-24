@@ -3,13 +3,11 @@
  */
 package com.thinkgem.jeesite.common.entity;
 
-import java.util.List;
-
-import javax.validation.constraints.NotNull;
-
+import com.thinkgem.jeesite.common.persistence.TreeEntity;
 import org.hibernate.validator.constraints.Length;
 
-import com.thinkgem.jeesite.common.persistence.TreeEntity;
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * 机构Entity

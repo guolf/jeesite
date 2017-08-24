@@ -3,12 +3,11 @@
  */
 package com.thinkgem.jeesite.common.persistence.proxy;
 
+import com.thinkgem.jeesite.common.persistence.Page;
+import com.thinkgem.jeesite.common.utils.Reflections;
 import org.apache.ibatis.binding.BindingException;
 import org.apache.ibatis.binding.MapperMethod;
 import org.apache.ibatis.session.SqlSession;
-
-import com.thinkgem.jeesite.common.persistence.Page;
-import com.thinkgem.jeesite.common.utils.Reflections;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

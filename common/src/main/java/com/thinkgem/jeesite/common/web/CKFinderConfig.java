@@ -3,17 +3,18 @@
  */
 package com.thinkgem.jeesite.common.web;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.http.HttpServletRequest;
-
-import com.thinkgem.jeesite.common.config.Global;
-import com.thinkgem.jeesite.common.utils.FileUtils;
-import com.thinkgem.jeesite.modules.sys.security.SystemAuthorizingRealm.Principal;
-import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
-
 import com.ckfinder.connector.configuration.Configuration;
 import com.ckfinder.connector.data.AccessControlLevel;
 import com.ckfinder.connector.utils.AccessControlUtil;
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.security.shiro.Principal;
+import com.thinkgem.jeesite.common.utils.FileUtils;
+import com.thinkgem.jeesite.common.utils.UserUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * CKFinder配置
@@ -28,7 +29,7 @@ public class CKFinderConfig extends Configuration {
 	
 	@Override
     protected Configuration createConfigurationInstance() {
-		Principal principal = (Principal) UserUtils.getPrincipal();
+		Principal principal =  UserUtils.getPrincipal();
 		if (principal == null){
 			return new CKFinderConfig(this.servletConf);
 		}
@@ -44,15 +45,8 @@ public class CKFinderConfig extends Configuration {
 		alc.setFileUpload(isUpload);
 		alc.setFileRename(isEdit);
 		alc.setFileDelete(isEdit);
-//		for (AccessControlLevel a : this.getAccessConrolLevels()){
-//			System.out.println(a.getRole()+", "+a.getResourceType()+", "+a.getFolder()
-//					+", "+a.isFolderView()+", "+a.isFolderCreate()+", "+a.isFolderRename()+", "+a.isFolderDelete()
-//					+", "+a.isFileView()+", "+a.isFileUpload()+", "+a.isFileRename()+", "+a.isFileDelete());
-//		}
 		AccessControlUtil.getInstance(this).loadACLConfig();
 		try {
-//			Principal principal = (Principal)SecurityUtils.getSubject().getPrincipal();
-//			this.baseURL = ServletContextFactory.getServletContext().getContextPath()+"/userfiles/"+principal+"/";
 			this.baseURL = FileUtils.path(Servlets.getRequest().getContextPath() + Global.USERFILES_BASE_URL + principal + "/");
 			this.baseDir = FileUtils.path(Global.getUserfilesBaseDir() + Global.USERFILES_BASE_URL + principal + "/");
 		} catch (Exception e) {

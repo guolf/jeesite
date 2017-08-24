@@ -3,14 +3,6 @@
  */
 package com.thinkgem.jeesite.common.entity;
 
-import java.util.Date;
-import java.util.List;
-
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Length;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Lists;
@@ -19,7 +11,12 @@ import com.thinkgem.jeesite.common.persistence.DataEntity;
 import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupCol;
 import com.thinkgem.jeesite.common.utils.Collections3;
 import com.thinkgem.jeesite.common.utils.excel.annotation.ExcelField;
-import com.thinkgem.jeesite.common.utils.excel.fieldtype.RoleListType;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotNull;
+import java.util.Date;
+import java.util.List;
 
 /**
  * 用户Entity
@@ -275,7 +272,7 @@ public class User extends DataEntity<User> {
 	}
 
 	@JsonIgnore
-	@ExcelField(title="拥有角色", align=1, sort=800, fieldType=RoleListType.class)
+//	@ExcelField(title="拥有角色", align=1, sort=800, fieldType= RoleListType.class)
 	public List<Role> getRoleList() {
 		return roleList;
 	}

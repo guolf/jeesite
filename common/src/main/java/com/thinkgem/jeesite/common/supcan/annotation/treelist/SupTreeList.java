@@ -3,15 +3,11 @@
  */
 package com.thinkgem.jeesite.common.supcan.annotation.treelist;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import com.thinkgem.jeesite.common.supcan.annotation.common.fonts.SupFont;
 import com.thinkgem.jeesite.common.supcan.annotation.common.properties.SupProperties;
 import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupGroup;
+
+import java.lang.annotation.*;
 
 /**
  * 硕正TreeList注解

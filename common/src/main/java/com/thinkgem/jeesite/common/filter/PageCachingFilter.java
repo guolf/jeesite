@@ -3,10 +3,9 @@
  */
 package com.thinkgem.jeesite.common.filter;
 
+import com.thinkgem.jeesite.common.utils.SpringContextHolder;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.constructs.web.filter.SimplePageCachingFilter;
-
-import com.thinkgem.jeesite.common.utils.SpringContextHolder;
 
 /**
  * 页面高速缓存过滤器

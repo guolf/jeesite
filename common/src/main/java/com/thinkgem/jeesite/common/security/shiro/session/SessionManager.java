@@ -3,15 +3,7 @@
  */
 package com.thinkgem.jeesite.common.security.shiro.session;
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Date;
-
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.UnknownSessionException;
@@ -24,7 +16,13 @@ import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.apache.shiro.web.util.WebUtils;
 
-import com.thinkgem.jeesite.common.utils.StringUtils;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Date;
 
 /**
  * 自定义WEB会话管理类

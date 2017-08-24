@@ -3,6 +3,11 @@
  */
 package com.thinkgem.jeesite.common.persistence.interceptor;
 
+import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.persistence.Page;
+import com.thinkgem.jeesite.common.persistence.dialect.Dialect;
+import com.thinkgem.jeesite.common.utils.Reflections;
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.apache.ibatis.executor.ErrorContext;
 import org.apache.ibatis.executor.ExecutorException;
 import org.apache.ibatis.logging.Log;
@@ -16,12 +21,6 @@ import org.apache.ibatis.scripting.xmltags.ForEachSqlNode;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
-
-import com.thinkgem.jeesite.common.config.Global;
-import com.thinkgem.jeesite.common.persistence.Page;
-import com.thinkgem.jeesite.common.persistence.dialect.Dialect;
-import com.thinkgem.jeesite.common.utils.Reflections;
-import com.thinkgem.jeesite.common.utils.StringUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

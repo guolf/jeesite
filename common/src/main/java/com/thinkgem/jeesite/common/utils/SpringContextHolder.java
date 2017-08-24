@@ -3,10 +3,7 @@
  */
 package com.thinkgem.jeesite.common.utils;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Date;
-
+import com.thinkgem.jeesite.common.config.Global;
 import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +13,9 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import com.thinkgem.jeesite.common.config.Global;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Date;
 
 /**
  * 以静态变量保存Spring ApplicationContext, 可在任何代码任何地方任何时候取出ApplicaitonContext.

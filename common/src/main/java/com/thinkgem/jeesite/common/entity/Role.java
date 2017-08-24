@@ -3,14 +3,13 @@
  */
 package com.thinkgem.jeesite.common.entity;
 
-import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
-import org.hibernate.validator.constraints.Length;
-
 import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.DataEntity;
+import org.apache.commons.lang3.StringUtils;
+import org.hibernate.validator.constraints.Length;
+
+import java.util.List;
 
 /**
  * 角色Entity

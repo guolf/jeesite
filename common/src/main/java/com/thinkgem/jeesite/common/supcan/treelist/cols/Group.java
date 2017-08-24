@@ -3,8 +3,6 @@
  */
 package com.thinkgem.jeesite.common.supcan.treelist.cols;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupGroup;
 import com.thinkgem.jeesite.common.utils.ObjectUtils;
@@ -12,6 +10,8 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
+import java.util.List;
 
 /**
  * 硕正TreeList Cols Group

@@ -3,13 +3,12 @@
  */
 package com.thinkgem.jeesite.common.entity;
 
-import java.util.Date;
-import java.util.Map;
-
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-
 import com.thinkgem.jeesite.common.persistence.DataEntity;
 import com.thinkgem.jeesite.common.utils.StringUtils;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
+import java.util.Date;
+import java.util.Map;
 
 /**
  * 日志Entity

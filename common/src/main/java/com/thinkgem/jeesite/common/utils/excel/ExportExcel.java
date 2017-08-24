@@ -3,30 +3,12 @@
  */
 package com.thinkgem.jeesite.common.utils.excel;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletResponse;
-
+import com.google.common.collect.Lists;
+import com.thinkgem.jeesite.common.utils.Encodes;
+import com.thinkgem.jeesite.common.utils.Reflections;
+import com.thinkgem.jeesite.common.utils.excel.annotation.ExcelField;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Comment;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFClientAnchor;
@@ -34,11 +16,14 @@ import org.apache.poi.xssf.usermodel.XSSFRichTextString;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.Lists;
-import com.thinkgem.jeesite.common.utils.Encodes;
-import com.thinkgem.jeesite.common.utils.Reflections;
-import com.thinkgem.jeesite.common.utils.excel.annotation.ExcelField;
-import com.thinkgem.jeesite.modules.sys.utils.DictUtils;
+import javax.servlet.http.HttpServletResponse;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.*;
 
 /**
  * 导出Excel文件（导出“XLSX”格式，支持大数据量导出   @see org.apache.poi.ss.SpreadsheetVersion）
@@ -394,7 +379,8 @@ public class ExportExcel {
 					}
 					// If is dict, get dict label
 					if (StringUtils.isNotBlank(ef.dictType())){
-						val = DictUtils.getDictLabel(val==null?"":val.toString(), ef.dictType(), "");
+						// fixme 字典数据处理
+//						val = DictUtils.getDictLabel(val==null?"":val.toString(), ef.dictType(), "");
 					}
 				}catch(Exception ex) {
 					// Failure to ignore
@@ -432,7 +418,7 @@ public class ExportExcel {
 	
 	/**
 	 * 输出到文件
-	 * @param fileName 输出文件名
+	 * @param name 输出文件名
 	 */
 	public ExportExcel writeFile(String name) throws FileNotFoundException, IOException{
 		FileOutputStream os = new FileOutputStream(name);

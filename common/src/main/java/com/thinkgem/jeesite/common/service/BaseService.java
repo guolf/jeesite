@@ -3,17 +3,16 @@
  */
 package com.thinkgem.jeesite.common.service;
 
-import java.util.List;
-
+import com.google.common.collect.Lists;
+import com.thinkgem.jeesite.common.entity.Role;
+import com.thinkgem.jeesite.common.entity.User;
+import com.thinkgem.jeesite.common.persistence.BaseEntity;
+import com.thinkgem.jeesite.common.utils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.google.common.collect.Lists;
-import com.thinkgem.jeesite.common.persistence.BaseEntity;
-import com.thinkgem.jeesite.common.utils.StringUtils;
-import com.thinkgem.jeesite.modules.sys.entity.Role;
-import com.thinkgem.jeesite.modules.sys.entity.User;
+import java.util.List;
 
 /**
  * Service基类
@@ -68,14 +67,9 @@ public abstract class BaseService {
 							sqlString.append(" OR " + oa + ".id = '" + user.getOffice().getId() + "'");
 						}
 						else if (Role.DATA_SCOPE_CUSTOM.equals(r.getDataScope())){
-//							String officeIds =  StringUtils.join(r.getOfficeIdList(), "','");
-//							if (StringUtils.isNotEmpty(officeIds)){
-//								sqlString.append(" OR " + oa + ".id IN ('" + officeIds + "')");
-//							}
 							sqlString.append(" OR EXISTS (SELECT 1 FROM sys_role_office WHERE role_id = '" + r.getId() + "'");
 							sqlString.append(" AND office_id = " + oa +".id)");
 						}
-						//else if (Role.DATA_SCOPE_SELF.equals(r.getDataScope())){
 						dataScope.add(r.getDataScope());
 					}
 				}
@@ -183,8 +177,6 @@ public abstract class BaseService {
 				sqlString.append(" AND " + where + ")");
 			}
 		}
-
-//		System.out.println("dataScopeFilter: " + sqlString.toString());
 
 		// 设置到自定义SQL对象
 		entity.getSqlMap().put(sqlMapKey, sqlString.toString());

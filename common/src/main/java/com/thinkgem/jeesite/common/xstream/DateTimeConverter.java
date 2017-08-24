@@ -1,13 +1,13 @@
 package com.thinkgem.jeesite.common.xstream;
 
-import java.util.Date;
-
 import com.thinkgem.jeesite.common.utils.DateUtils;
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.UnmarshallingContext;
 import com.thoughtworks.xstream.io.HierarchicalStreamReader;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
+
+import java.util.Date;
 
 /**
  * XStream 日期转换类

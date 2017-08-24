@@ -3,12 +3,11 @@
  */
 package com.thinkgem.jeesite.common.entity;
 
-import javax.validation.constraints.NotNull;
-import javax.xml.bind.annotation.XmlAttribute;
-
+import com.thinkgem.jeesite.common.persistence.DataEntity;
 import org.hibernate.validator.constraints.Length;
 
-import com.thinkgem.jeesite.common.persistence.DataEntity;
+import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAttribute;
 
 /**
  * 字典Entity

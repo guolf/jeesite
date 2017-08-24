@@ -3,6 +3,7 @@
  */
 package com.thinkgem.jeesite.common.persistence.proxy;
 
+import com.thinkgem.jeesite.common.persistence.Page;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.binding.BindingException;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -10,8 +11,6 @@ import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
-
-import com.thinkgem.jeesite.common.persistence.Page;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
